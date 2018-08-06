@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<h1> Create New Menu Item </h1>
+
+<h2> {{item.name}} </h2>
+<form action="{{url_for('newMenuItem', restaurant_id = item.id)}}" method = 'post'>
+Item name:<br>
+<input type='text'	size='30'	name='name'><br>
+Description:<br>
+<input type='text'	size='30'	name='description'><br>
+Price:<br>
+<input type='text'	size='30'	name='price'><br>
+Course:<br><br>
+<input type='radio'	name='course' value="entree" checked> Entree<br>
+<input type='radio'	name='course' value="appetizer"> Appetizer<br>
+<input type='radio'	name='course' value="dessert"> Dessert<br>
+<input type='radio'	name='course' value="beverage"> Beverage<br><br>
+<input type ='submit' name='newMenuItem' value='Create'>
+</form>
+
+<a href = '{{url_for('showMenu', restaurant_id = item.id)}}'> Back </a>
+
+
+
+</body>
+</html>
